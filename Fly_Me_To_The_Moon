@@ -1,0 +1,26 @@
+use_bpm 115
+use_synth :piano
+live_loop :The_Moon
+#m1 or Measure1
+play :c2
+play :b2
+
+
+
+
+
+#m2 or Measure2
+
+
+
+
+
+
+#m3 or Measure3
+
+
+
+
+
+
+#m4 or Measure5
