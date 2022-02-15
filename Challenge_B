@@ -30,9 +30,9 @@ sleep 22.5
 live_loop :Crash_Cymbal do
   1.times do
     sample :drum_splash_hard
-    sleep 3
+    sleep 4
     sample :drum_splash_hard
-    sleep 2
+    sleep 3
     sample :drum_splash_hard
     sleep 0
   end
