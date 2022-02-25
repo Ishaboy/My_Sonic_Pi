@@ -3,11 +3,13 @@ use_bpm 180
 use_synth :chipbass
 
 # VARIABLES TO STORE SAMPLES
-
-
 intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/mario_intro.wav"
-sample intro
+jump = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/jump.wav"
+coin = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/coin.wav"
+pipe = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/pipe.wav"
+mushroom = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/mushroom.wav"
 
+sample intro
 sleep 8
 
 
@@ -50,17 +52,13 @@ end
 
 live_loop :samples do
   4.times do
-    intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/jump.wav"
-    sample intro
+    sample jump
     sleep 2
-    intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/coin.wav"
-    sample intro
+    sample coin
     sleep 1
-    intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/coin.wav"
-    sample intro
+    sample coin
     sleep 1
-    intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/pipe.wav"
-    sample intro
+    sample pipe
     sleep 4
   end
   stop
@@ -90,5 +88,4 @@ sleep 0.5
 play :b3
 sleep 1
 
-intro = "C:/Users/ryan_romero/Downloads/mario_sounds-20220223T193401Z-001/mario_sounds/mushroom.wav"
-sample intro
+sample mushroom
