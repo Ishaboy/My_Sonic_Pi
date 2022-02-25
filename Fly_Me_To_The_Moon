@@ -1,26 +1,98 @@
-use_bpm 115
+# Welcome to Sonic Pi
+
+use_bpm 108
 use_synth :piano
-live_loop :The_Moon
-#m1 or Measure1
-play :c2
-play :b2
+with_fx :echo do
+  sample :the_moon
+end
+live_loop :the_moon do
+  #m1 or Measure1
+  play :c5
+  sleep 1.5
+  play :b4
+  sleep 0.5
+  play :a4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  #m2 or Measure2
+  play :f4
+  sleep 2
+  play :f4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :a4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  #m3 or Measure3
+  play :b4
+  play :g4
+  play :d4
+  sleep 1
+  play :a4
+  sleep 1
+  play :g4
+  play :d4
+  play :b3
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :f4
+  sleep 1
+  #m4 or Measure4
+  play :e4
+  play :b3
+  play :a3
+  sleep 2
+  play :e4
+  play :b3
+  play :a3
+  sleep 0.5
+  play :bb3
+  sleep 0.5
+  play :bb3
+  sleep 1
+end
+
+with_fx :echo do
+  sample :the_spring
+end
 
 
-
-
-
-#m2 or Measure2
-
-
-
-
-
-
-#m3 or Measure3
-
-
-
-
-
-
-#m4 or Measure5
+live_loop :the_spring do
+  #m1 or Measure1
+  play :e4
+  play :c4
+  play :a4
+  sleep 3
+  play :e4
+  play :c4
+  play :a3
+  sleep 0.5
+  play :c4
+  play :a3
+  play :d3
+  sleep 0.5
+  #m2 or Measure2
+  play :c4
+  play :a3
+  play :d3
+  sleep 2
+  #m3 or Measure3
+  play :f3
+  play :g2
+  sleep 1.5
+  play :f3
+  sleep 0.5
+  play :f3
+  sleep 2
+  play :c3
+  sleep 4
+  #m4 or Measure4
+end
