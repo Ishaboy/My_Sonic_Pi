@@ -1,7 +1,9 @@
-# Welcome to Sonic Pi
 use_bpm 108
 use_synth :piano
 use_synth_defaults sustain: 6
+
+Play_Among_Stars = "C:/Users/ryan_romero/Pictures/yt5s.com-Frank Sinatra - Fly Me To The Moon (Vocal track_Vocal only)(360p)_Trim.mp4"
+
 
 define :a do
   #m1 or Measure1
@@ -235,6 +237,10 @@ with_fx :reverb do
   end
 end
 
+sleep 20
+
 with_fx :echo do
-  sample
+  live_loop :the_spring do
+    sample Play_Among_Stars
+  end
 end
