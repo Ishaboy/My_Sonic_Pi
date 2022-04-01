@@ -23,7 +23,7 @@ define :gold do
   end
 end
 
-song = [:c5, :e4, :c4, :c5, :f4:, :d4, :b3, :f4]
+song = [:c5, :e4, :c4, :c5, :f4, :d4, :b3, :f4]
 
 i = 0
 
