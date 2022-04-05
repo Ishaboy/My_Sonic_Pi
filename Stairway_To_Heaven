@@ -3,6 +3,8 @@ use_bpm 120
 use_synth :piano
 use_synth_defaults
 
+led_zeplin = "C:/Users/ryan_romero/Downloads/Led-Zeppelin-Stairway-To-Heaven-_Robert-Plant-Isolated-Vocals_.wav"
+
 notes = [:c4, :e4, :a4, :b4, :e4, :c4, :b4]
 
 i = 0
@@ -36,6 +38,38 @@ define :tune do
       i = 0
     end
   end
+end
+
+note = [:e4, :c4, :b3, :c4, :c4, :e4, :c4, :b3]
+
+i = 0
+
+define :lady do
+  8.times do
+    play note[i]
+    sleep 0.5
+    i = i + 1
+    if i > 7
+      i = 0
+    end
+  end
+end
+
+define :whispered do
+  #Measure 4/8
+  play :d4
+  play :b2
+  play :g2
+  sleep 0.5
+  play :e4
+  play :c4
+  play :b3
+  sleep 0.5
+  play :e4
+  play :c4
+  play :b3
+  sleep 2
+  sleep 1
 end
 
 define :wonder do
@@ -86,36 +120,13 @@ with_fx :reverb do
     tune
     
     #Measure 3/7
-    play :e4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :b3
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :e4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :b3
-    sleep 0.5
+    
+    lady
+    
     #Measure 4/8
-    play :d4
-    play :b2
-    play :g2
-    sleep 0.5
-    play :e4
-    play :c4
-    play :b3
-    sleep 0.5
-    play :e4
-    play :c4
-    play :b3
-    sleep 2
-    sleep 1
+    
+    whispered
+    
     #Measure 5
     sleep 0.5
     play :b3
@@ -137,36 +148,12 @@ with_fx :reverb do
     tune
     
     #Measure 7/3
-    play :e4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :b3
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :e4
-    sleep 0.5
-    play :c4
-    sleep 0.5
-    play :b3
-    sleep 0.5
+    
+    lady
+    
     #Measure 8/4
-    play :d4
-    play :b2
-    play :g2
-    sleep 0.5
-    play :e4
-    play :c4
-    play :b3
-    sleep 0.5
-    play :e4
-    play :c4
-    play :b3
-    sleep 2
-    sleep 1
+    
+    whispered
     
   end
   stop
@@ -187,4 +174,12 @@ with_fx :reverb do
     
   end
   stop
+end
+
+sleep 4
+
+with_fx :reverb do
+  live_loop :led_zeplin do
+    play heavens_stairs
+  end
 end
