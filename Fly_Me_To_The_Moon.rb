@@ -132,6 +132,20 @@ end
 with_fx :reverb do
   live_loop :the_moon do
     
+    #m1 or Measure1
+    play :c5,amp: 4
+    sleep 1.5
+    play :b4,amp: 4
+    sleep 0.5
+    play :a4,amp: 4
+    sleep 0.5
+    play :g4,amp: 4
+    sleep 0.5
+    play :g4,amp: 4
+    sleep 0.5
+    play :f4,amp: 4
+    sleep 0.5
+    
     moon_function
     
     lunar_function
@@ -215,8 +229,7 @@ sleep 4
 
 with_fx :reverb do
   live_loop :the_stars do
-    sample Among_Stars, amp: 8
-    sleep 28
+    play Among_Stars, amp: 8
   end
   stop
 end
