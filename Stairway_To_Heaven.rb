@@ -1,9 +1,8 @@
-# Welcome to Sonic Pi
 use_bpm 120
 use_synth :piano
-use_synth_defaults
+use_synth_defaults sustain: 6
 
-led_zeplin = "C:/Users/ryan_romero/Downloads/Led-Zeppelin-Stairway-To-Heaven-_Robert-Plant-Isolated-Vocals_.wav"
+led_zeplin ="C:/Users/ryan_romero/Downloads/Stair_Way_Heaven.wav"
 
 notes = [:c4, :e4, :a4, :b4, :e4, :c4, :b4]
 
@@ -71,6 +70,7 @@ define :whispered do
   sleep 2
   sleep 1
 end
+
 
 define :wonder do
   #Measure 1/5
@@ -155,11 +155,9 @@ with_fx :reverb do
     
     whispered
     
+    stop
   end
-  stop
 end
-
-sleep 4
 
 with_fx :reverb do
   live_loop :to_heaven do
@@ -172,14 +170,39 @@ with_fx :reverb do
     
     glitter 2, 0, :r, 0, :r, 0
     
+    stop
   end
-  stop
 end
 
-sleep 4
+sleep 10
 
 with_fx :reverb do
   live_loop :led_zeplin do
-    play heavens_stairs
+    sample led_zeplin, amp: 4
+    stop
+  end
+end
+
+sleep 24
+
+with_fx :reverb do
+  live_loop :ending_one do
+    4.times do
+      sample :drum_cymbal_open
+      sleep 1
+    end
+    stop
+  end
+end
+
+sleep 0.5
+
+with_fx :reverb do
+  live_loop :ending_two do
+    4.times do
+      sample :drum_cymbal_closed
+      sleep 1
+    end
+    stop
   end
 end
