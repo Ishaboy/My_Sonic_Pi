@@ -184,8 +184,8 @@ with_fx :reverb do
     sleep 0.5
     play :c4,amp: 0.5
     sleep 0.5
+    stop
   end
-  stop
 end
 
 sleep 4
@@ -221,15 +221,15 @@ with_fx :reverb do
     
     stars2_function
     
+    stop
   end
-  stop
 end
 
 sleep 4
 
 with_fx :reverb do
   live_loop :the_stars do
-    play Among_Stars, amp: 8
+    sample Among_Stars, amp: 8
+    stop
   end
-  stop
 end
