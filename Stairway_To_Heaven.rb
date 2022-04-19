@@ -1,3 +1,4 @@
+# Welcome to Sonic Pi
 use_bpm 120
 use_synth :piano
 use_synth_defaults sustain: 6
@@ -14,7 +15,7 @@ x = 0
 
 define :gold do
   7.times do
-    play notes[i]
+    play notes[i],amp: 2
     sleep rest[x]
     i = i + 1
     x = x + 1
@@ -30,7 +31,7 @@ i = 0
 
 define :tune do
   8.times do
-    play song[i]
+    play song[i], amp: 2
     sleep 0.5
     i = i + 1
     if i > 7
@@ -45,7 +46,7 @@ i = 0
 
 define :lady do
   8.times do
-    play note[i]
+    play note[i], amp: 2
     sleep 0.5
     i = i + 1
     if i > 7
@@ -56,17 +57,17 @@ end
 
 define :whispered do
   #Measure 4/8
-  play :d4
-  play :b2
-  play :g2
+  play :d4, amp: 2
+  play :b2, amp: 2
+  play :g2, amp: 2
   sleep 0.5
-  play :e4
-  play :c4
-  play :b3
+  play :e4, amp: 2
+  play :c4, amp: 2
+  play :b3, amp: 2
   sleep 0.5
-  play :e4
-  play :c4
-  play :b3
+  play :e4, amp: 2
+  play :c4, amp: 2
+  play :b3, amp: 2
   sleep 2
   sleep 1
 end
@@ -74,34 +75,34 @@ end
 
 define :wonder do
   #Measure 1/5
-  play :a3
+  play :a3, amp: 2
   sleep 2
-  play :g3
+  play :g3, amp: 2
   sleep 2
   #Measure 2/6
-  play :g3
+  play :g3, amp: 2
   sleep 2
-  play :f3
+  play :f3, amp: 2
   sleep 2
   #Measure 3/7
-  play :f3
+  play :f3, amp: 2
   sleep 4
 end
 
 define :glitter do |s1, s2, n1, s3, n2, s4|
   #Measure 4/8
-  play :b2
+  play :b2, amp: 2
   sleep 0.5
-  play :a2
+  play :a2, amp: 2
   sleep 0.5
-  play :a2
+  play :a2, amp: 2
   sleep s1
   sleep s2
-  play :a2
+  play :a2, amp: 2
   sleep 0.5
-  play n1
+  play n1, amp: 2
   sleep s3
-  play n2
+  play n2, amp: 2
   sleep s4
 end
 
@@ -129,19 +130,19 @@ with_fx :reverb do
     
     #Measure 5
     sleep 0.5
-    play :b3
+    play :b3, amp: 2
     sleep 0.5
-    play :c4
+    play :c4, amp: 2
     sleep 0.5
-    play :e4
+    play :e4, amp: 2
     sleep 0.5
-    play :b4
+    play :b4, amp: 2
     sleep 0.5
-    play :e4
+    play :e4, amp: 2
     sleep 0.5
-    play :c4
+    play :c4, amp: 2
     sleep 0.5
-    play :b4
+    play :b4, amp: 2
     sleep 0.5
     #Measure 6/2
     
@@ -178,7 +179,7 @@ sleep 10
 
 with_fx :reverb do
   live_loop :led_zeplin do
-    sample led_zeplin, amp: 4
+    sample led_zeplin, amp: 30
     stop
   end
 end
