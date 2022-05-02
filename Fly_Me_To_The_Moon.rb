@@ -131,6 +131,8 @@ define :stars2_function do
   end
 end
 
+#Song Starts HERE
+
 with_fx :reverb do
   live_loop :the_mars do
     sample Fly_Me, amp: 8
