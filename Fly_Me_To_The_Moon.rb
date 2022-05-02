@@ -5,6 +5,8 @@ use_synth_defaults sustain: 6
 
 Among_Stars = "C:/Users/ryan_romero/Downloads/Final Vocals(Fly Me To The Moon).wav"
 
+Fly_Me = "C:/Users/ryan_romero/Downloads/DA_Begining.wav"
+
 define :moon_function do
   #m1/m5 or Measure1/5
   play :c5,amp: 4
@@ -81,9 +83,9 @@ define :jupiter_function do |n1, n2, n3, n4, n5, n6|
   sleep 0.5
   play n4,amp: 4
   sleep 0.5
-  play n5,amp: 4
+  play n5,amp: 3.5
   sleep 0.5
-  play n6,amp: 4
+  play n6,amp: 3
   sleep 0.5
 end
 
@@ -130,20 +132,29 @@ define :stars2_function do
 end
 
 with_fx :reverb do
+  live_loop :the_mars do
+    sample Fly_Me, amp: 8
+    stop
+  end
+end
+
+sleep 31
+
+with_fx :reverb do
   live_loop :the_moon do
     
     #m1 or Measure1
-    play :c5,amp: 4
+    play :c5,amp: 0.5
     sleep 1.5
-    play :b4,amp: 4
+    play :b4,amp: 1
     sleep 0.5
-    play :a4,amp: 4
+    play :a4,amp: 1.5
     sleep 0.5
-    play :g4,amp: 4
+    play :g4,amp: 2
     sleep 0.5
-    play :g4,amp: 4
+    play :g4,amp: 3
     sleep 0.5
-    play :f4,amp: 4
+    play :f4,amp: 3.5
     sleep 0.5
     
     moon_function
@@ -175,10 +186,10 @@ with_fx :reverb do
     jupiter_function :g4, :f4, :e4, :d4, :d4, :c4
     
     #m12 or Measure12
-    play :c4,amp: 4
+    play :c4,amp: 2.5
     sleep 1.5
-    play :e4,amp: 3
-    play :b4,amp: 2
+    play :e4,amp: 2
+    play :b4,amp: 1.5
     sleep 1.5
     play :c4,amp: 1
     sleep 0.5
