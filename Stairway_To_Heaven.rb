@@ -106,6 +106,8 @@ define :glitter do |s1, s2, n1, s3, n2, s4|
   sleep s4
 end
 
+#Song Starts HERE
+
 with_fx :reverb do
   live_loop :stairway do
     #Measure 1a
